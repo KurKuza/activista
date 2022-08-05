@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.dd3ba649.css",
-    "main.js": "/static/js/main.d805c22e.js",
-    "static/js/787.82d511cf.chunk.js": "/static/js/787.82d511cf.chunk.js",
-    "static/media/logo.svg": "/static/media/logo.70addac2a6ac4bc7b86bfa790cdc444f.svg",
-    "index.html": "/index.html",
-    "main.dd3ba649.css.map": "/static/css/main.dd3ba649.css.map",
-    "main.d805c22e.js.map": "/static/js/main.d805c22e.js.map",
-    "787.82d511cf.chunk.js.map": "/static/js/787.82d511cf.chunk.js.map"
+    "main.css": "/activista/static/css/main.dd3ba649.css",
+    "main.js": "/activista/static/js/main.00299eb7.js",
+    "static/js/787.82d511cf.chunk.js": "/activista/static/js/787.82d511cf.chunk.js",
+    "static/media/logo.svg": "/activista/static/media/logo.70addac2a6ac4bc7b86bfa790cdc444f.svg",
+    "index.html": "/activista/index.html",
+    "main.dd3ba649.css.map": "/activista/static/css/main.dd3ba649.css.map",
+    "main.00299eb7.js.map": "/activista/static/js/main.00299eb7.js.map",
+    "787.82d511cf.chunk.js.map": "/activista/static/js/787.82d511cf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dd3ba649.css",
-    "static/js/main.d805c22e.js"
+    "static/js/main.00299eb7.js"
   ]
 }
