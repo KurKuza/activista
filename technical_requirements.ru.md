@@ -26,7 +26,7 @@
   - PHP
   - Go
 - Фронтенд:
-  - Angular
+  - React
   - TypeScript
   - JavaScript
   - HTML
@@ -35,4 +35,5 @@
 
 ## 3. Требования к дизайну
 
-**Пример**: [Material UI](https://material.angular.io/) -  использует Google
+**Пример**: [Material UI](https://material.io/) - использует Google
+[MUI: React Material UI](https://mui.com/) - библиотека для React

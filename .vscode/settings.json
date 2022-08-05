@@ -1,13 +1,17 @@
 {
   "workbench.colorCustomizations": {
-    "titleBar.activeBackground": "#4285F4",
-    "titleBar.activeForeground": "#fff"
+    // "titleBar.activeBackground": "#4285F4",
+    // "titleBar.activeForeground": "#fff"
   },
   "[markdown]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.unicodeHighlight.invisibleCharacters": false,
     "editor.wordWrap": "on",
-    "editor.quickSuggestions": false,
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
     "editor.codeActionsOnSave": {
       "source.fixAll": true
     },
