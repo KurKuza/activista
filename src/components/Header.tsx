@@ -11,14 +11,36 @@ import MenuItem from '@mui/material/MenuItem'
 import Toolbar from '@mui/material/Toolbar'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
-import React from 'react'
+import React, {useCallback, useEffect, useState} from 'react'
+import {auth} from '../firebase'
 
 import LogoActivista from '../images/icons/logo.svg'
 
 const pages = ['Chat']
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
+const settings = [
+  {
+    name: 'Sign out',
+    action: () => {
+      auth.signOut()
+    },
+  },
+]
 
 const ResponsiveAppBar = () => {
+  const [photoUser, setPhotoUser] = useState<string>('')
+
+  const getUserPhoto = async () => {
+    const photoURL: any = await auth.currentUser?.photoURL
+
+    setPhotoUser(photoURL)
+  }
+
+  useEffect(() => {
+    if (photoUser === '' || photoUser === undefined) {
+      setTimeout(() => getUserPhoto(), 3000)
+    }
+  }, [photoUser])
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null)
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null)
 
@@ -51,8 +73,7 @@ const ResponsiveAppBar = () => {
             href="/"
             sx={{
               mr: 2,
-              display: {xs: 'none', md: 'flex', alignItems: 'center'},
-              fontFamily: 'monospace',
+              display: {xs: 'none', md: 'flex', alignItems: 'center', letterSpacing: '1px'},
               fontWeight: 700,
               color: 'inherit',
               textDecoration: 'none',
@@ -133,7 +154,9 @@ const ResponsiveAppBar = () => {
               <IconButton onClick={handleOpenUserMenu} sx={{p: 0}}>
                 <Avatar
                   alt="Remy Sharp"
-                  src="https://sun1-96.userapi.com/s/v1/ig2/rcWmWlkB2EAT7iEHYOqkcTe2OgVp7HswTYPn45nGWA0mkw-xsgToIMhaMU1qSXGXp4-8Eh9omamU0CMIXFLP5vQB.jpg?size=50x50&quality=96&crop=233,413,810,810&ava=1"
+                  src={
+                    photoUser ? photoUser : 'https://api.adorable.io/avatars/23/abott@adorable.png'
+                  }
                 />
               </IconButton>
             </Tooltip>
@@ -153,9 +176,9 @@ const ResponsiveAppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map(setting => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+              {settings.map((setting, index) => (
+                <MenuItem key={index} onClick={setting.action}>
+                  <Typography textAlign="center">{setting.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
