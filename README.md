@@ -3,7 +3,7 @@
 [![en](https://img.shields.io/badge/lang-en-blue.svg)](./README.en.md)
 
 <p align="center">
-  <img width="150" src="./images/logo/logo.svg">
+  <img width="150" src="./images/icons/logo.svg">
 </p>
 
 ## Девиз/слоган проекта
