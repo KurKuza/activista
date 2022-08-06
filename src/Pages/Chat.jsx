@@ -59,7 +59,17 @@ function ChatRoom() {
 
   return (
     <>
-      <Box sx={{display:'flex', flexDirection: 'column', maxWidth: '500px', height: '80vh',margin:'0 auto', overflowY: 'auto', gap: '5px'}}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          maxWidth: '500px',
+          height: '80vh',
+          margin: '0 auto',
+          overflowY: 'auto',
+          gap: '5px',
+        }}
+      >
         {messages &&
           messages.map((msg, index) => <ChatMessage key={`${msg.id}__${index}`} message={msg} />)}
 
@@ -67,7 +77,7 @@ function ChatRoom() {
       </Box>
 
       <form onSubmit={sendMessage}>
-        <Box sx={{display: 'flex', gap: '5px'}}>
+        <Box sx={{display: 'flex', gap: '5px', maxWidth: '500px', margin: '0 auto'}}>
           <TextField
             variant="standard"
             placeholder="Write"
@@ -76,7 +86,6 @@ function ChatRoom() {
             sx={{outline: 'none'}}
             fullWidth
             autoComplete="off"
-            sx={{maxWidth: '500px', margin: '0 auto'}}
           />
           <Button variant="outlined" type="submit" disabled={!formValue}>
             <Typography sx={{textTransform: 'capitalize'}}>Send</Typography>
@@ -94,7 +103,8 @@ function ChatMessage(props) {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'end',
-    flexDirection: 'row-reverse', gap: '3px'
+    flexDirection: 'row-reverse',
+    gap: '3px',
   }
   const received = {display: 'flex', alignItems: 'center', gap: '3px'}
 
