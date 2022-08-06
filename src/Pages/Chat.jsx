@@ -6,13 +6,12 @@ import firebase from 'firebase/compat/app'
 import {useAuthState} from 'react-firebase-hooks/auth'
 import {useCollectionData} from 'react-firebase-hooks/firestore'
 import {auth, firestore} from '../firebase'
-import SignOut from '../components/SignOut'
 
 function Chat() {
   const [user] = useAuthState(auth)
 
   return (
-    <Container sx={{display: 'flex', justifyContent: 'center'}}>
+    <Container xs={{display: 'flex', justifyContent: 'center'}}>
       <section>{user ? <ChatRoom /> : <SignIn />}</section>
     </Container>
   )
@@ -60,7 +59,7 @@ function ChatRoom() {
 
   return (
     <>
-      <Box sx={{minWidth: '500px', height: '80vh', overflowY: 'auto'}}>
+      <Box sx={{display:'flex', flexDirection: 'column', maxWidth: '500px', height: '80vh',margin:'0 auto', overflowY: 'auto', gap: '5px'}}>
         {messages &&
           messages.map((msg, index) => <ChatMessage key={`${msg.id}__${index}`} message={msg} />)}
 
@@ -77,6 +76,7 @@ function ChatRoom() {
             sx={{outline: 'none'}}
             fullWidth
             autoComplete="off"
+            sx={{maxWidth: '500px', margin: '0 auto'}}
           />
           <Button variant="outlined" type="submit" disabled={!formValue}>
             <Typography sx={{textTransform: 'capitalize'}}>Send</Typography>
@@ -94,9 +94,9 @@ function ChatMessage(props) {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'end',
-    flexDirection: 'row-reverse',
+    flexDirection: 'row-reverse', gap: '3px'
   }
-  const received = {display: 'flex', alignItems: 'center'}
+  const received = {display: 'flex', alignItems: 'center', gap: '3px'}
 
   const messageClass = uid === auth.currentUser.uid ? sent : received
 

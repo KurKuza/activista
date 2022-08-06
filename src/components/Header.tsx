@@ -82,7 +82,7 @@ const ResponsiveAppBar = () => {
             <img style={{width: 48}} src={LogoActivista} alt="Logo Activista" />
             Activista
           </Typography>
-
+          {/*
           <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}}}>
             <IconButton
               size="large"
@@ -118,23 +118,28 @@ const ResponsiveAppBar = () => {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
-          <AdbIcon sx={{display: {xs: 'flex', md: 'none'}, mr: 1}} />
+          </Box> */}
+
           <Typography
-            variant="h5"
+            variant="h6"
             noWrap
             component="a"
-            href=""
+            href="#"
             sx={{
               mr: 2,
-              display: {xs: 'flex', md: 'none'},
-              flexGrow: 1,
-              fontFamily: 'monospace',
+              display: {
+                xs: 'flex',
+                md: 'none',
+                alignItems: 'center',
+                letterSpacing: '1px',
+                flexGrow: 1,
+              },
               fontWeight: 700,
               color: 'inherit',
               textDecoration: 'none',
             }}
           >
+            <img style={{width: 48}} src={LogoActivista} alt="Logo Activista" />
             Activista
           </Typography>
           <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
