@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/activista/static/css/main.dd3ba649.css",
-    "main.js": "/activista/static/js/main.63467f08.js",
+    "main.js": "/activista/static/js/main.35aad262.js",
     "static/js/787.82d511cf.chunk.js": "/activista/static/js/787.82d511cf.chunk.js",
     "static/media/logo.svg": "/activista/static/media/logo.cb4466fb890ff7e46e4a70a9e7b2d6a2.svg",
     "index.html": "/activista/index.html",
     "main.dd3ba649.css.map": "/activista/static/css/main.dd3ba649.css.map",
-    "main.63467f08.js.map": "/activista/static/js/main.63467f08.js.map",
+    "main.35aad262.js.map": "/activista/static/js/main.35aad262.js.map",
     "787.82d511cf.chunk.js.map": "/activista/static/js/787.82d511cf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dd3ba649.css",
-    "static/js/main.63467f08.js"
+    "static/js/main.35aad262.js"
   ]
 }
