@@ -11,12 +11,16 @@ import MenuItem from '@mui/material/MenuItem'
 import Toolbar from '@mui/material/Toolbar'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
-import React, {useCallback, useEffect, useState} from 'react'
-import {auth} from '../firebase'
+import React, { useCallback, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { auth } from '../firebase'
 
 import LogoActivista from '../images/icons/logo.svg'
 
-const pages = ['Chat']
+const pages = [
+  { name: 'Chat', link: '/' },
+  { name: 'Map', link: '/map' },
+]
 const settings = [
   {
     name: 'Sign out',
@@ -62,7 +66,7 @@ const ResponsiveAppBar = () => {
   return (
     <AppBar
       position="static"
-      sx={{backgroundColor: 'inherit', color: 'inherit', boxShadow: 'none'}}
+      sx={{ backgroundColor: 'inherit', color: 'inherit', boxShadow: 'none' }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -73,13 +77,13 @@ const ResponsiveAppBar = () => {
             href="/"
             sx={{
               mr: 2,
-              display: {xs: 'none', md: 'flex', alignItems: 'center', letterSpacing: '1px'},
+              display: { xs: 'none', md: 'flex', alignItems: 'center', letterSpacing: '1px' },
               fontWeight: 700,
               color: 'inherit',
               textDecoration: 'none',
             }}
           >
-            <img style={{width: 48}} src={LogoActivista} alt="Logo Activista" />
+            <img style={{ width: 48 }} src={LogoActivista} alt="Logo Activista" />
             Activista
           </Typography>
           {/*
@@ -139,24 +143,22 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            <img style={{width: 48}} src={LogoActivista} alt="Logo Activista" />
+            <img style={{ width: 48 }} src={LogoActivista} alt="Logo Activista" />
             Activista
           </Typography>
-          <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map(page => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{my: 2, color: 'inherit', display: 'block'}}
-              >
-                {page}
-              </Button>
+              <Link key={page.name} to={page.link} style={{ textDecoration: 'none' }}>
+                <Button variant="contained" sx={{ mx: 1, display: 'block' }}>
+                  {page.name}
+                </Button>
+              </Link>
             ))}
           </Box>
 
-          <Box sx={{flexGrow: 0}}>
+          <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{p: 0}}>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar
                   alt="Remy Sharp"
                   src={
@@ -166,7 +168,7 @@ const ResponsiveAppBar = () => {
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{mt: '45px'}}
+              sx={{ mt: '45px' }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{

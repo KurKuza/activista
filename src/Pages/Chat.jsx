@@ -16,6 +16,7 @@ function Chat() {
     </Container>
   )
 }
+export default Chat
 
 function SignIn() {
   const signInWithGoogle = () => {
@@ -119,5 +120,3 @@ function ChatMessage(props) {
     </>
   )
 }
-
-export default Chat

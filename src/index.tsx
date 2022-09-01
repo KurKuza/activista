@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
+import { HashRouter } from 'react-router-dom'
 
 import CssBaseline from '@mui/material/CssBaseline'
-import {createTheme, ThemeProvider} from '@mui/material/styles'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
 
 const Theme = createTheme({
   palette: {
@@ -15,12 +16,14 @@ const Theme = createTheme({
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
-  <React.StrictMode>
-    <ThemeProvider theme={Theme}>
-      <CssBaseline />
-      <App />
-    </ThemeProvider>
-  </React.StrictMode>,
+  <HashRouter>
+    <React.StrictMode>
+      <ThemeProvider theme={Theme}>
+        <CssBaseline />
+        <App />
+      </ThemeProvider>
+    </React.StrictMode>
+  </HashRouter>,
 )
 
 // If you want to start measuring performance in your app, pass a function
