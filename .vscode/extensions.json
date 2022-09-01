@@ -3,7 +3,6 @@
   "recommendations": [
     "nhoizey.gremlins",
     "editorconfig.editorconfig",
-    "davidanson.vscode-markdownlint",
-    "spmeesseman.vscode-taskexplorer"
+    "davidanson.vscode-markdownlint"
   ]
 }
